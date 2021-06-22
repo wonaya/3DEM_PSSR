@@ -1,0 +1,106 @@
+{
+	"id": "PSSR",
+	"name": "PSSR",
+	"icon": null,
+	"parallelism": "PARALLEL",
+	"defaultProcessorsPerNode": 20,
+	"defaultMemoryPerNode": 1,
+	"defaultNodeCount": 1,
+	"defaultMaxRunTime": "08:00:00",
+	"defaultQueue": "p100",
+	"version": "0.0.0",
+	"isPublic": false,
+	"helpURI": "https://github.com/BPHO-Salk/PSSR",
+	"label": "PSSR",
+	"shortDescription": "Point-Scanning Super-Resolution",
+	"longDescription": "a Deep Learning-based framework that faciliates otherwise unattainable resolution, speed and sensitivity of point-scanning imaging systems",
+	"tags": [
+		"DCV",
+		"desktop",
+		"pssr",
+		"interactive",
+		"resolution imaging",
+		"appCategory:Data Processing"
+	],
+	"ontology": [],
+	"executionType": "HPC",
+	"executionSystem": "3dem.community.exec.maverick2",
+	"deploymentPath": "applications/3dem/PSSR-0.0.0",
+	"deploymentSystem": "cloud.corral.work.wonaya",
+	"templatePath": "wrapper.sh",
+	"testPath": "test.sh",
+	"checkpointable": false,
+	"available": true,
+	"inputs": [{
+			"id": "workingDirectory",
+			"value": {
+                                "default": "",
+                                "visible": true,
+				"required": true,
+				"order": 0
+			},
+			"details": {
+				"label": "Working Directory",
+				"description": "The directory containing the image files (tif format) that you want to work on. This directory and its files will be copied to where your app session runs. You can drag the link for the directory from the Data Browser on the left, or click the 'Select Input' button and then select the directory.",
+				"argument": null,
+				"showArgument": false,
+				"repeatArgument": false
+			},
+			"semantics": {
+				"ontology": [
+					"xsd:string"
+				],
+				"fileTypes": [
+					"raw-0"
+				]
+			}
+		},
+		{
+			"id": "model",
+			"value": {
+				"visible": true,
+				"required": true,
+				"order": 0,
+				"enquote": false,
+				"default": ""
+			},
+			"details": {
+				"label": "Pretrained model",
+				"description": "Pretrained model in pickle format",
+				"argument": null,
+				"showArgument": false,
+				"repeatArgument": false
+			},
+			"semantics": {
+				"ontology": [
+					"xsd:string"
+				],
+				"fileTypes": [
+					"raw-0"
+				]
+			}
+		}
+	],
+	"parameters": [{
+		"id": "size",
+		"value": {
+			"default": 1024,
+			"order": 1,
+			"required": true,
+			"type": "number",
+			"validator": "",
+			"visible": true
+		},
+		"semantics": {
+			"ontology": [
+				"xs:integer"
+			]
+		},
+		"details": {
+			"description": "Pixel size (Default: 1024)",
+			"label": "Pixel size (Default: 1024)"
+		}
+
+	}],
+	"outputs": []
+}
