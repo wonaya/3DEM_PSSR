@@ -11,6 +11,6 @@ You need three files to deploy apps
 
 `pssr.json` Include details of application parameters, input, parameters and output.
 
-##App deployment
+## App deployment
 Setup Tapis environment to 3DEM tenant first and have permission set up to deploy apps to 3DEM execution system. </br>
 ```tapis apps create -F pssr.json```
